@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome to Love Yuja Wang</title>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=no"
+        />
+        <meta
+            name="author"
+            content="Boring <boring@boring.wang> (https://boring.wang)"
+        />
+        <link rel="icon" href="./favicon.png" />
+        <style>
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                margin: 0;
+                background: url(./yuja.jpg) center / cover;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            // @ts-check
+
+            document.addEventListener('click', () => {
+                const links = [
+                    {
+                        name: 'official website',
+                        url: 'http://yujawang.com/'
+                    },
+                    {
+                        name: 'Instagram',
+                        url: 'https://www.instagram.com/yujawang.official/'
+                    },
+                    {
+                        name: 'Weibo',
+                        url: 'https://weibo.com/u/2473652512'
+                    }
+                ]
+                const lines = [
+                    'This domain is maintained by a fan.',
+                    'Would you like to go to?',
+                    ...links.map(
+                        (link, index) => `${index + 1}. Yuja's ${link.name}`
+                    )
+                ]
+
+                const choose = links[Number(prompt(lines.join('\n'))) - 1]
+
+                if (!choose) {
+                    return
+                }
+
+                location.href = choose.url
+            })
+        </script>
+    </body>
+</html>
