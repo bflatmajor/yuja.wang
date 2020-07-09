@@ -57,13 +57,13 @@
                     ),
                 ]
 
-                const choose = links[Number(prompt(lines.join('\n'))) - 1]
+                const choice = links[Number(prompt(lines.join('\n'))) - 1]
 
-                if (!choose) {
+                if (!choice) {
                     return
                 }
 
-                location.assign(choose.url)
+                location.assign(choice.url)
             })
         </script>
     </body>
