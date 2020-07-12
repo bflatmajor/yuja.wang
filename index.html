@@ -37,24 +37,26 @@
             document.addEventListener('click', () => {
                 const links = [
                     {
-                        name: 'official website',
+                        name: "Yuja's official website",
                         url: 'http://yujawang.com/',
                     },
                     {
-                        name: 'Instagram',
+                        name: "Yuja's Instagram",
                         url: 'https://www.instagram.com/yujawang.official/',
                     },
                     {
-                        name: 'Weibo',
+                        name: "Yuja's Weibo",
                         url: 'https://weibo.com/u/2473652512',
+                    },
+                    {
+                        name: 'My homepage',
+                        url: 'https://boring.wang',
                     },
                 ]
                 const lines = [
                     'This domain is maintained by a fan.',
                     'Would you like to go to?',
-                    ...links.map(
-                        (link, index) => `${index + 1}. Yuja's ${link.name}`
-                    ),
+                    ...links.map((link, index) => `${index + 1}. ${link.name}`),
                 ]
 
                 const choice = links[Number(prompt(lines.join('\n'))) - 1]
