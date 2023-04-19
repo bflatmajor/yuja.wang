@@ -9,6 +9,7 @@
         <title>Welcome to love Yuja Wang</title>
         <meta
             name="description"
+            itemprop="description"
             content="Yuja is the cutest pianist with excellent concerts which I can't afford."
         />
         <meta
@@ -21,6 +22,7 @@
         />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
+        <meta itemprop="name" content="Welcome to love Yuja Wang" />
         <meta itemprop="image" content="./yuja.jpg" />
         <link rel="icon" href="./favicon.png" />
         <style>
@@ -74,6 +76,13 @@
                 }
 
                 location.assign(choice.url)
+            })
+
+            navigator.share?.({
+                title: document.title,
+                text: document
+                    .querySelector('meta[name="description"]')
+                    .getAttribute('content'),
             })
         </script>
     </body>
