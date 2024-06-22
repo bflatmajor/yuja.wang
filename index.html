@@ -90,7 +90,9 @@
                     return
                 }
 
-                location.assign(choice.url)
+                const url = new URL(choice.url)
+                url.searchParams.set('utm_source', location.href)
+                location.assign(url)
             })
         </script>
     </body>
